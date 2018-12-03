@@ -18,13 +18,14 @@ def maxSubArrayLen(arr,k):
     for i in range(len(arr)):
         cur_sum+=arr[i]
         if cur_sum not in count_dict:
-            print("current",cur_sum)
+            #print("current",cur_sum)
             count_dict[cur_sum]=i
         diff = cur_sum - k
         if diff in count_dict:
             cur_max = max(cur_max,i-count_dict[diff])
-            print("cur->",i-count_dict[diff],i,count_dict[diff])
-        print(diff,cur_max,'->',count_dict)
+            print(diff,cur_max,i,count_dict[diff])
+            #print("cur->",i-count_dict[diff],i,count_dict[diff])
+        #print(diff,cur_max,'->',count_dict)
     return cur_max            
     
 print(maxSubArrayLen([2,-1,-2,-1],-1))
